@@ -10,6 +10,19 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  let pretoriaElement = document.querySelector("#pretoria");
+  if (pretoriaElement) {
+    let pretoriaDateElement = pretoriaElement.querySelector(".date");
+    let pretoriaTimeElement = pretoriaElement.querySelector(".time");
+    let pretoriaTime = moment().tz("Africa/Pretoria");
+
+    pretoriaDateElement.innerHTML = pretoriaTime.format("MMMM Do YYYY");
+    pretoriaTimeElement.innerHTML = pretoriaTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
   let parisElement = document.querySelector("#paris");
   if (parisElement) {
     let parisDateElement = parisElement.querySelector(".date");
